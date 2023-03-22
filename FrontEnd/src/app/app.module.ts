@@ -22,12 +22,10 @@ import { MatListModule } from '@angular/material/list';
     NavbarComponent,
     LoginComponent,
   ],
+  
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-  ],
-  imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
