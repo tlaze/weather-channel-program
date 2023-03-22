@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -23,12 +24,13 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    LoginComponent,
+    LoginComponent
   ],
   
   imports: [
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
