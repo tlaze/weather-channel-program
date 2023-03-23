@@ -9,7 +9,7 @@ import lombok.*;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weather {
+public class Location {
     @Id
     private long zip;
     @Column
