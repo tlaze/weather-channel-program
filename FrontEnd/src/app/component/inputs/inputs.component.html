@@ -1,0 +1,30 @@
+<mat-card class="my-card">
+    <mat-card-content>
+        <form class="my-form locationForm">
+        <div class="cityState">
+            <mat-form-field class="full-width">
+                <mat-label>City</mat-label>
+                <input  matInput [(ngModel)]="city" name="email" >
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>State</mat-label>
+                <input  matInput [(ngModel)]="state" name="state">
+            </mat-form-field>
+        </div>
+            <p class="or">OR</p>
+            <mat-form-field class="full-width">
+            <mat-label>Zip</mat-label>
+            <input  matInput [(ngModel)]="zip"  name="zip">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <div style="margin:auto">
+        <mat-card-actions>
+            <button mat-raised-button (click)="submit()" style="text-align:center" color="primary">Submit</button>
+        </mat-card-actions>
+    </div>
+    <p class="errorMessage">{{error}}</p>
+</mat-card>
+
+
+

@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -14,6 +15,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { InputsComponent } from './component/inputs/inputs.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +26,14 @@ import { MatListModule } from '@angular/material/list';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
+    InputsComponent
   ],
+  
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     LayoutModule,
@@ -34,6 +42,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
