@@ -1,0 +1,29 @@
+input {
+    margin-bottom: 20px!important;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+p {
+    margin:0;
+}
+.locationForm {
+    text-align: center;
+}
+.cityState>mat-form-field {
+    margin: auto;
+    display: block;
+    max-width:300px
+}
+.errorMessage {
+    color: red;
+    text-align: center;
+    font-size: 1rem;
+    margin:20px;
+}
+.or {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+  

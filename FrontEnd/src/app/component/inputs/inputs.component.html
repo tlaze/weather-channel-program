@@ -1,0 +1,63 @@
+<!-- <p>inputs works!</p>
+<form class="locationForm">
+    <div class="cityState">
+        <input placeholder="City" [(ngModel)]="city" >
+        <input placeholder="State" [(ngModel)] ="state" />
+    </div>
+    <p class="or">Or</p>
+    <div>
+        <input placeholder="Zip Code" [(ngModel)] ="zip"/>    
+        <button (click)="submit()" class="inputSubmit">Submit</button>
+        <p class="errorMessage">{{error}}</p>
+    </div>
+</form>
+  <mat-label></mat-label> -->
+
+  <!-- <mat-card class="my-card">
+    <mat-card-content>
+       <form class="my-form">
+          <mat-form-field class="full-width">
+             <mat-label>City</mat-label>
+             <input  matInput  placeholder="Email" name="email">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+             <mat-label>Password</mat-label>
+             <input  matInput  placeholder="Password" name="password">
+          </mat-form-field>
+       </form>
+    </mat-card-content>
+    <mat-card-actions>
+       <button mat-raised-button color="primary">LOGIN</button>
+    </mat-card-actions>
+ </mat-card> -->
+
+ <mat-card class="my-card">
+    <mat-card-content>
+       <form class="my-form locationForm">
+        <div class="cityState">
+          <mat-form-field class="full-width">
+             <mat-label>City</mat-label>
+             <input  matInput [(ngModel)]="city" placeholder="Email" name="email">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+             <mat-label>State</mat-label>
+             <input  matInput [(ngModel)]="state" placeholder="Password" name="password">
+          </mat-form-field>
+        </div>
+          <p class="or">OR</p>
+          <mat-form-field class="full-width">
+            <mat-label>Zip</mat-label>
+            <input  matInput [(ngModel)]="zip" placeholder="Password" name="password">
+         </mat-form-field>
+       </form>
+    </mat-card-content>
+    <div style="margin:auto">
+    <mat-card-actions>
+       <button mat-raised-button (click)="submit()" style="text-align:center" color="primary">Submit</button>
+    </mat-card-actions></div>
+
+    <p class="errorMessage">{{error}}</p>
+ </mat-card>
+
+
+
