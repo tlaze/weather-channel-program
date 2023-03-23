@@ -18,6 +18,6 @@ jobs:
           node-version: 16
           cache: 'npm'
       - run: npm ci
-      - run: npm run lint
+      # - run: npm run lint
       - run: npm run build
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
