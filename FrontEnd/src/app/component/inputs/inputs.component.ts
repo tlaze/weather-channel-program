@@ -10,12 +10,6 @@ export class InputsComponent {
   state: String = "";
   zip: String = "";
   error:String="";
-  password:String="";
-  username:String="";
-  value = 'Clear me';
-  login():void {
-    
-  }
 
   submit() : void {
     if (this.zip !== "") {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins={"http://localhost:4200", "http://localhost:9000"}, allowCredentials = "true")
 @RestController
 public class AccountController {
     AccountService accountService;
@@ -13,12 +14,10 @@ public class AccountController {
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
-    @CrossOrigin(origins={"http://localhost:4200", "http://localhost:9000"}, allowCredentials = "true")
     @PostMapping("account")
     public Account addAccount(@RequestBody Account account) {
         return accountService.addAccount(account);
     }
-    @CrossOrigin(origins={"http://localhost:4200", "http://localhost:9000"}, allowCredentials = "true")
     @GetMapping("account")
     public List<Account> getAllAccounts() {
         return accountService.getAllAccounts();
