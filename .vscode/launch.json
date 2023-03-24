@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "AppApplication",
+      "request": "launch",
+      "mainClass": "com.weather.app.AppApplication",
+      "projectName": "app"
+    },
+    {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",
