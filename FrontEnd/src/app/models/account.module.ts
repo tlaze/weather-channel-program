@@ -1,5 +1,6 @@
 export interface Account{
   id?:number,
   username?:string,
-  password?:string
+  password?:string,
+  loggedIn?:boolean
 }

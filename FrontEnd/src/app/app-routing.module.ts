@@ -6,10 +6,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  {path : "home", component : HomeComponent},
   {path : "register", component: RegisterComponent},
   {path : "login", component : LoginComponent},
-  {path : "home", component : HomeComponent},
-  {path : "**", component : HomeComponent, pathMatch: 'full'}
+  {path : "**", component : HomeComponent}
 ];
 
 @NgModule({

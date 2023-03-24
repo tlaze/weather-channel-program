@@ -8,7 +8,13 @@ import { Account } from '../../models/account.module';
   providedIn: 'root'
 })
 export class LoginService {
+  
+  username:string = "";
+  password:string = "";
+  loggedIn:boolean = false;
 
+  noAccountMessage:boolean = false;
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit():void{}
@@ -21,10 +27,4 @@ export class LoginService {
   }
 }
 
-//   getUsers():Observable<Account>{
-//     let header : HttpHeaders = new HttpHeaders();
-//     header.append("accept", "text/json");
-//     header.append("Access-Control-Allow-Origin", "*");
-//     return this.http.get<Account>("http://127.0.0.1:9000/account", {headers:header});
-//   }
-// }
+
