@@ -1,23 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { UserLogin } from 'src/app/models/login.module';
-import { LoginService } from 'src/app/services/login.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Account } from '../../models/account.module';
+import { LoginService } from '../../services/login/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
+@Input()
 export class LoginComponent implements OnInit {
   
   username:string = "";
   password:string = "";
-  constructor(private loginService : LoginService) {}
+
+  constructor(private loginService: LoginService) {}
   
   ngOnInit():void {}
 
-  login(): void{
-    console.log("logged in");
-    let user: UserLogin = {username:this.username, password:this.password};
-    this.loginService.loginUser(user).subscribe();
+  onSubmit(): void{
+    let loginData : Account = {username:this.username, password:this.password}
+    this.loginService.getUserLogin().subscribe(data=>{
+      console.log(data[0].username);
+      console.log(loginData.username);
+      for(let i = 0; i < data.length; i++){
+        if(data[i].username === loginData.username){
+          console.log("match");
+        }
+      }
+    });
+  }
+  
+  reloadPage(): void{
+    window.location.reload();
   }
 }

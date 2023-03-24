@@ -1,17 +1,24 @@
+<p>login works!</p>
 <mat-card class="my-card">
-    <mat-card-content>
-       <form class="my-form">
-          <mat-form-field class="full-width">
-             <mat-label>Email</mat-label>
-             <input  matInput [(ngModel)]="username" placeholder="Email" name="email">
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Password</mat-label>
-             <input  matInput [(ngModel)]="password" placeholder="Password" name="password">
-          </mat-form-field>
-       </form>
-    </mat-card-content>
-    <mat-card-actions>
-       <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
-    </mat-card-actions>
- </mat-card>
+      <mat-card-content>
+         <form class="my-form" name="form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width">
+               <mat-label>Username</mat-label>
+               <input  matInput type="text" [(ngModel)]="username" name="user" class="form-control"require placeholder="Username">
+            </mat-form-field>
+          
+            <mat-form-field class="full-width">
+               <mat-label>Password</mat-label>
+               <input  matInput type="password" [(ngModel)]="password"  name="pass" class="form-control" required minlength="6"placeholder="Password">
+            </mat-form-field>
+          
+            <mat-card-actions>
+               <button mat-raised-button color="primary">LOGIN</button>
+            </mat-card-actions>
+         </form>
+      </mat-card-content>
+
+      <mat-card-actions>
+         <button mat-raised-button color="primary" routerLink="/register">Click to Register</button>
+      </mat-card-actions>
+</mat-card>
