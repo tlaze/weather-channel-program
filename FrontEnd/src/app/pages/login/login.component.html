@@ -10,8 +10,7 @@
             <mat-form-field class="full-width">
                <mat-label>Password</mat-label>
                <input  matInput type="password" [(ngModel)]="password"
-               name="pass" class="form-control" required
-               minlength="6"placeholder="Password">
+               name="pass" class="form-control" placeholder="Password">
             </mat-form-field>
           
             <mat-card-actions>
@@ -23,8 +22,14 @@
       <mat-card-actions>
          <button mat-raised-button color="primary" routerLink="/register">Click to Register</button>
       </mat-card-actions>
+      <mat-card>
+
+         <mat-card-content *ngIf="noAccountMessage">Account does not exist. Try again</mat-card-content>
+       </mat-card>
+
+       <mat-card>
+         <mat-card-content *ngIf="noMatchMessage">Username and password do not
+         match a registered user.</mat-card-content>
+       </mat-card>
 </mat-card>
 
-<mat-card>
-   <mat-card-content *ngIf="noAccountMessage">Account does not exist. Try again</mat-card-content>
- </mat-card>

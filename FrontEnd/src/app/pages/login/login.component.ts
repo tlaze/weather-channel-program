@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Account } from '../../models/account.module';
-import { LoginService } from '../../services/login/login.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -9,42 +9,60 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-  
+  @Input()
   username:string = "";
   password:string = "";
-  loggedIn:boolean = false;
+
+  @Output()
+  refreshEvent : EventEmitter<any> = new EventEmitter<any>();
+  
 
   noAccountMessage:boolean = false;
+  noMatchMessage:boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit():void {}
+  ngOnInit():void {
+    this.authService.getRegisteredUsers().subscribe();
+  }
+
+  idAsNumber(id : number | undefined) : number {
+    return id as number;
+  }
 
   onSubmit(): void{
-    let loginData : Account = {username:this.username, password:this.password, loggedIn:this.loggedIn}
-    this.loginService.getUserLogin().subscribe(data=>{
-      // console.log(data);
-      // console.log(data[0].username);
-      // console.log(loginData.username);
+    
+    this.authService.getRegisteredUsers().subscribe(data =>{
+      console.log(data);
+      this.refreshEvent.emit()
+
+      // Validates if user input matches an existing account
       for(let i = 0; i < data.length; i++){
-        // Checks to make sure account username was already registered
-        if(data[i].username != loginData.username){
-          console.log("not a match");
-          this.loginService.loggedIn = false;
+        console.log(data[i].username);
+
+        // If user input matches a correct user, changes loggedIn to true
+        if(this.username == data[i].username && this.password == data[i].password){
+          console.log("account exists");
+          console.log(data[i].id);
+          this.authService.loginUser(this.idAsNumber(data[i].id)).subscribe( json => {
+            this.refreshEvent.emit()
+            console.log(json);
+            this.router.navigateByUrl('/home');
+          });
+        }
+
+        // Validates if user entered the correct credentials
+        else if(this.username == data[i].username || this.password == data[i].password){
+          this.noMatchMessage = true;
+        }
+
+        // Alerts users if the account isn't registered
+        else{
+          console.log("account not created");
           this.noAccountMessage = true;
         }
-        else{
-          console.log("match");
-          // loginData.loggedIn = true;
-          this.loginService.loggedIn = true;
-          this.router.navigateByUrl('/home');
-        }
       }
-      console.log(loginData);
     });
   }
-  
-  reloadPage(): void{
-    window.location.reload();
-  }
 }
+
