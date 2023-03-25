@@ -23,9 +23,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void{
     let loginData : Account = {username:this.username, password:this.password, loggedIn:this.loggedIn}
     this.loginService.getUserLogin().subscribe(data=>{
-      // console.log(data);
       // console.log(data[0].username);
-      // console.log(loginData.username);
       for(let i = 0; i < data.length; i++){
         // Checks to make sure account username was already registered
         if(data[i].username != loginData.username){
@@ -35,16 +33,11 @@ export class LoginComponent implements OnInit {
         }
         else{
           console.log("match");
-          // loginData.loggedIn = true;
           this.loginService.loggedIn = true;
           this.router.navigateByUrl('/home');
         }
       }
-      console.log(loginData);
+      console.log("User Data: " + loginData);
     });
-  }
-  
-  reloadPage(): void{
-    window.location.reload();
   }
 }

@@ -20,4 +20,13 @@
             </mat-card-actions>
          </form>
       </mat-card-content>
+
+      <mat-card>
+         <mat-card-content *ngIf="passLength">Password must be more than 6
+         characters long.</mat-card-content>
+       </mat-card>
+
+       <mat-card>
+         <mat-card-content *ngIf="notUnique">Username already taken.</mat-card-content>
+       </mat-card>
 </mat-card>
