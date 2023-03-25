@@ -30,7 +30,7 @@ import { InputsComponent } from './component/inputs/inputs.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    InputsComponent
+    InputsComponent,
   ],
   
   imports: [
@@ -48,7 +48,7 @@ import { InputsComponent } from './component/inputs/inputs.component';
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
