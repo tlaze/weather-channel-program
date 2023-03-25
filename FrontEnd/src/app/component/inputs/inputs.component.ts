@@ -12,10 +12,15 @@ export class InputsComponent {
   state: String = "";
   zip: String = "";
   error:String="";
+  timeFrame:string = "hourly";
   constructor(private weatherService : WeatherService){}
 
   convert(value: number|undefined) : number {
     return value as number;
+  }
+
+  changeTime(timeFrame:string) {
+    this.timeFrame = timeFrame;
   }
 
   submit() : void {
@@ -23,14 +28,14 @@ export class InputsComponent {
       this.weatherService.getLocationZip(this.zip).subscribe(data=> {
         let a :Location = data;
         console.log(a)
-        this.weatherService.getWeather(this.convert(a.lat), this.convert(a.lon)).subscribe(temp => {
+        this.weatherService.getWeather(this.convert(a.lat), this.convert(a.lon), this.timeFrame).subscribe(temp => {
           console.log(temp)
         })
       })
     } else if (this.city !== "" && this.state !== "") {
       this.weatherService.getLocationCityState(this.city, this.state).subscribe(data => {
         let a : Location[] = data;
-        this.weatherService.getWeather(this.convert(a[0].lat), this.convert(a[0].lon)).subscribe(temp => {
+        this.weatherService.getWeather(this.convert(a[0].lat), this.convert(a[0].lon), this.timeFrame).subscribe(temp => {
           console.log(temp)
         });
       });

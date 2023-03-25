@@ -25,5 +25,13 @@ p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width:300px;
+    margin:auto;
+    margin-bottom: 20px;
+    /* margin-bottom: 30px; */
+}
   
