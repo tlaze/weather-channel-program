@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { LoginService } from 'src/app/services/login/login.service';
+import { AuthService } from '../../services/auth.service';
+import { Account } from '../../models/account.module';
 
 @Component({
   selector: 'app-navbar',
@@ -18,9 +19,10 @@ export class NavbarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private loginService:LoginService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
 
-  ifLoggedIn():boolean{;
-      return this.loginService.loggedIn;
+  ifLoggedIn():boolean{
+
+    return true;
   }
 }

@@ -13,8 +13,12 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(unique=true)
+    @Column
     private String username;
     @Column
     private String password;
+    @Column
+    private Boolean accountCreated;
+    @Column
+    private Boolean loggedIn;
 }

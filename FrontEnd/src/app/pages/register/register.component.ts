@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { RegisterService } from '../../services/register/register.service';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { Account } from '../../models/account.module';
 import { Router } from '@angular/router';
 
@@ -10,57 +10,58 @@ import { Router } from '@angular/router';
 })
 
 export class RegisterComponent implements OnInit{
+
+  @Input()
   username:string = "";
   password:string = "";
+  
+  @Output()
+  refreshEvent : EventEmitter<any> = new EventEmitter<any>();
+  
+
   userLength:boolean = false;
   passLength:boolean = false;
   notUnique:boolean = false;
 
-  constructor(private registerService: RegisterService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
   
-  ngOnInit():void{}
-
-
+  ngOnInit():void{
+    this.authService.getRegisteredUsers().subscribe().unsubscribe();
+  }
+  
   onSubmit(): void {
-    let registeredUsers : Account = {username:this.username, password:this.password}
 
-// gets a list of registered users to check if new account isn't a duplicate
-    this.registerService.getRegisteredUsers().subscribe(users => {
-      console.log(users);
-      
-      // If users array is empty, adds first user account to
-      if(users.length == 0){
-        console.log("null");
-        this.registerService.registerUser(registeredUsers).subscribe();
-      }
+    let newUser : Account = {username:this.username, password:this.password, accountCreated:true, loggedIn:false}
 
-      // console.log("new input:" + this.username);
-      // console.log("userdata: " + users[0].username);
-      
-      for(let i = 0; i < users.length; i++){
-        
-        if(this.username == users[i].username){
+    this.authService.getRegisteredUsers().subscribe(data => {
+      this.refreshEvent.emit();
+
+      // Validates unique username
+      let duplicate = false;
+      data.forEach((users) =>{
+        console.log(users.username);
+        if(newUser.username == users.username){
           this.notUnique = true;
-          continue;
+          duplicate = true;
         }
-        else if(this.username.length < 3){
+      })
+
+      // Validates username and password length
+      if(!duplicate){
+        if(this.username.length < 3){
+          console.log("user not 3 characters");
           this.userLength = true;
-          continue;
         }
         else if(this.password.length < 6){
-          console.log("not 6 characters");
+          console.log("pass not 6 characters");
           this.passLength = true;
         }
         else{
-          this.registerService.registerUser(registeredUsers).subscribe();
-          this.router.navigateByUrl('/login');
-        }
+          this.authService.registerNewUser(newUser).subscribe();
+          // this.router.navigateByUrl('/login');
+        } 
       }
+        console.log(data);
     });
   }
 }
-    
-
-
-      
-      
