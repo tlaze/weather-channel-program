@@ -22,7 +22,8 @@ export class NavbarComponent {
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
 
   ifLoggedIn():boolean{
-
+// needs to check LoggedIn boolean status. if true it will display favorites and
+// history. 
     return true;
   }
 }
