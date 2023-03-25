@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { RegisterService } from '../../services/register/register.service';
 import { Account } from '../../models/account.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,11 +12,11 @@ import { Account } from '../../models/account.module';
 export class RegisterComponent implements OnInit{
   username:string = "";
   password:string = "";
-  
+  userLength:boolean = false;
   passLength:boolean = false;
   notUnique:boolean = false;
 
-  constructor(private registerService: RegisterService) {}
+  constructor(private registerService: RegisterService, private router: Router) {}
   
   ngOnInit():void{}
 
@@ -42,14 +43,17 @@ export class RegisterComponent implements OnInit{
           this.notUnique = true;
           continue;
         }
+        else if(this.username.length < 3){
+          this.userLength = true;
+          continue;
+        }
         else if(this.password.length < 6){
           console.log("not 6 characters");
           this.passLength = true;
-          break;
-        
         }
         else{
           this.registerService.registerUser(registeredUsers).subscribe();
+          this.router.navigateByUrl('/login');
         }
       }
     });
