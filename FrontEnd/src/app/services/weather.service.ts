@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 export class WeatherService {
   // Michaels Key: be48583d2851b91aa0e1e65766875064
   // VIsual Crossing: DAL7VELFH2K3V3SX4BXEVLVY5
-  apiKey = environment.apiKey;
-  crossingKey = environment.crossingKey
+  apiKey = 'be48583d2851b91aa0e1e65766875064';
+  crossingKey = "DAL7VELFH2K3V3SX4BXEVLVY5";
 
   constructor(private http: HttpClient) { }
   getLocationZip(zip:String):Observable<Location>{

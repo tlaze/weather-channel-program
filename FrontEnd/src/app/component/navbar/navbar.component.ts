@@ -20,10 +20,12 @@ export class NavbarComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
-
+    logout() {
+      this.authService.isLoggedIn= false;
+    }
   ifLoggedIn():boolean{
+    return this.authService.isLoggedIn;
 // needs to check LoggedIn boolean status. if true it will display favorites and
 // history. 
-    return true;
   }
 }
