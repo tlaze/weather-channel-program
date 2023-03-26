@@ -1,3 +1,7 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 .sidenav-container {
   height: 100%;
 }
@@ -18,4 +22,13 @@
 
 .button-row {
   padding: 5%;
+}
+
+.buttons {
+  margin-left: 3%;
+}
+
+.logo{
+  width: 10%;
+  height: auto;
 }

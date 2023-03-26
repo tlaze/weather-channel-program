@@ -1,7 +1,21 @@
+<div class="home">
+<a routerLink = "">home</a>
+<a routerLink = "login">login</a>
+</div>
+<!-- <p>navbar works!</p> -->
 <mat-toolbar>
- <span>My Weather</span>
+  <div>
+  <img class="logo" src="assets/weatherImages/inclement.png">
+ <span class="myWeather">My Weather</span>
+ </div>
  <span class="example-spacer"></span>
  <div class="button-row">
+  <button class="buttons" mat-raised-button color="primary">Today</button>
+  <button class="buttons" mat-raised-button color="primary">Hourly</button>
+  <button class="buttons" mat-raised-button color="primary">10 day</button>
+  <button class="buttons" mat-raised-button color="primary">Weekend</button>
+  <button class="buttons" mat-raised-button color="primary">Monthly</button>
+  <button class="buttons" mat-raised-button color="primary">Radar</button>  
   <button routerLink = "" mat-raised-button color="primary">home</button>
   <button routerLink = "login" mat-raised-button color="primary">Login</button>
   <button (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
