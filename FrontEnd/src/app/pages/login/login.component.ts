@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
           console.log(data[i].id);
           this.authService.loginUser(this.idAsNumber(data[i].id)).subscribe( json => {
             this.refreshEvent.emit()
+            this.authService.isLoggedIn = true;
             console.log(json);
             this.router.navigateByUrl('/home');
           });

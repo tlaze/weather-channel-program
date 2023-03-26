@@ -9,6 +9,7 @@ import { Account } from '../models/account.module';
 })
 
 export class AuthService {
+  isLoggedIn:boolean = false;
 
   constructor(private http: HttpClient) { }
  
