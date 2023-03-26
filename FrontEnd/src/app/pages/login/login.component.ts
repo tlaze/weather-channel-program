@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UserLogin } from 'src/app/models/login.module';
-import { LoginService } from 'src/app/services/login.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Account } from '../../models/account.module';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,16 +9,60 @@ import { LoginService } from 'src/app/services/login.service';
 })
 
 export class LoginComponent implements OnInit {
-  
+  @Input()
   username:string = "";
   password:string = "";
-  constructor(private loginService : LoginService) {}
-  
-  ngOnInit():void {}
 
-  login(): void{
-    console.log("logged in");
-    let user: UserLogin = {username:this.username, password:this.password};
-    this.loginService.loginUser(user).subscribe();
+  @Output()
+  refreshEvent : EventEmitter<any> = new EventEmitter<any>();
+  
+
+  noAccountMessage:boolean = false;
+  noMatchMessage:boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit():void {
+    this.authService.getRegisteredUsers().subscribe();
+  }
+
+  idAsNumber(id : number | undefined) : number {
+    return id as number;
+  }
+
+  onSubmit(): void{
+    
+    this.authService.getRegisteredUsers().subscribe(data =>{
+      console.log(data);
+      this.refreshEvent.emit()
+
+      // Validates if user input matches an existing account
+      for(let i = 0; i < data.length; i++){
+        console.log(data[i].username);
+
+        // If user input matches a correct user, changes loggedIn to true
+        if(this.username == data[i].username && this.password == data[i].password){
+          console.log("account exists");
+          console.log(data[i].id);
+          this.authService.loginUser(this.idAsNumber(data[i].id)).subscribe( json => {
+            this.refreshEvent.emit()
+            console.log(json);
+            this.router.navigateByUrl('/home');
+          });
+        }
+
+        // Validates if user entered the correct credentials
+        else if(this.username == data[i].username || this.password == data[i].password){
+          this.noMatchMessage = true;
+        }
+
+        // Alerts users if the account isn't registered
+        else{
+          console.log("account not created");
+          this.noAccountMessage = true;
+        }
+      }
+    });
   }
 }
+

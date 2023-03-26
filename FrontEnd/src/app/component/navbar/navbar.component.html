@@ -16,6 +16,10 @@
   <button class="buttons" mat-raised-button color="primary">Weekend</button>
   <button class="buttons" mat-raised-button color="primary">Monthly</button>
   <button class="buttons" mat-raised-button color="primary">Radar</button>  
+  <button routerLink = "" mat-raised-button color="primary">home</button>
+  <button routerLink = "login" mat-raised-button color="primary">login</button>
+  <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">Favorites</button>
+  <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">History</button> 
 </div>
  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
    <mat-icon>favorite</mat-icon>
