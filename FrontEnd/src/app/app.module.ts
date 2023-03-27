@@ -22,11 +22,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputsComponent } from './component/inputs/inputs.component';
-import { FormSchemaComponent } from './form-schema/form-schema.component';
+// import { FormSchemaComponent } from './form-schema/form-schema.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { WeatherComponent } from './pages/weather/weather.component';
 import { CommonModule } from '@angular/common';
+import { HourlyComponent } from './component/hourly/hourly.component';
+import { TodayComponent } from './component/today/today.component';
+import { WeeklyComponent } from './component/weekly/weekly.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,12 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     LoginComponent,
     InputsComponent,
-    FormSchemaComponent,
+    // FormSchemaComponent,
     WeatherComponent,
     RegisterComponent,
+    HourlyComponent,
+    TodayComponent,
+    WeeklyComponent,
   ],
   
   imports: [
