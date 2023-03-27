@@ -29,7 +29,7 @@ export class WeatherService {
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
     console.log(lat, long)
-    return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=be48583d2851b91aa0e1e65766875064`)
+    return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=be48583d2851b91aa0e1e65766875064`, {headers:header});
 
   }
 }

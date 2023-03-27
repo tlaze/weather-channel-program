@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -19,6 +19,11 @@ import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputsComponent } from './component/inputs/inputs.component';
+import { FormSchemaComponent } from './form-schema/form-schema.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { WeatherComponent } from './pages/weather/weather.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,12 +31,15 @@ import { InputsComponent } from './component/inputs/inputs.component';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    InputsComponent
+    InputsComponent,
+    FormSchemaComponent,
+    WeatherComponent
   ],
   
   imports: [
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -44,7 +52,10 @@ import { InputsComponent } from './component/inputs/inputs.component';
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
