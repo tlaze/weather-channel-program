@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
             this.refreshEvent.emit()
             this.authService.isLoggedIn = true;
             console.log(json);
-            this.router.navigateByUrl('/home');
+            this.router.navigateByUrl('home');
           });
         }
 
