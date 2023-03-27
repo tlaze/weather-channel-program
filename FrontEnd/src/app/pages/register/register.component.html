@@ -1,0 +1,40 @@
+<p>register works!</p>
+<mat-card class="my-card">
+    <mat-card-content>
+         <form class="my-form" name="form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width">
+               <mat-label for="username">Username</mat-label>
+               <input  matInput type="text" [(ngModel)]="username" name="user"
+               class="form-control" required minlength="3"
+               placeholder="Username">
+               <mat-hint>At least 3 Characters.</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+               <mat-label for="password">Password</mat-label>
+               <input  matInput type="password" [(ngModel)]="password" name="pass"
+               class="form-control" required minlength="6"
+               placeholder="Password">
+               <mat-hint>At least 6 Characters.</mat-hint>
+            </mat-form-field>
+        
+            <mat-card-actions>
+               <button mat-raised-button color="primary">Create Account</button>
+            </mat-card-actions>
+         </form>
+      </mat-card-content>
+
+      <mat-card>
+         <mat-card-content *ngIf="userLength">Username must be more than 3
+         characters long.</mat-card-content>
+       </mat-card>
+
+      <mat-card>
+         <mat-card-content *ngIf="passLength">Password must be more than 6
+         characters long.</mat-card-content>
+       </mat-card>
+
+       <mat-card>
+         <mat-card-content *ngIf="notUnique">Username already taken.</mat-card-content>
+       </mat-card>
+</mat-card>

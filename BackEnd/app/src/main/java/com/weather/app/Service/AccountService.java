@@ -20,4 +20,9 @@ public class AccountService {
     public Account addAccount(Account account) {
         return accountRepository.save(account);
     }
+    public Account changeLoginStatus(long id, Account account) {
+        Account newAccount = accountRepository.findById(id).get();
+        newAccount.setLoggedIn(account.getLoggedIn());
+        return newAccount;
+    }
 }

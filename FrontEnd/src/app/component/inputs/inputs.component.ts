@@ -13,11 +13,16 @@ export class InputsComponent {
   state: String = "";
   zip: String = "";
   error:String="";
+  timeFrame:string = "hourly";
   constructor(private weatherService : WeatherService,
               private router: Router){}
-
+  
   convert(value: number|undefined) : number {
     return value as number;
+  }
+
+  changeTime(timeFrame:string) {
+    this.timeFrame = timeFrame;
   }
 
   submit() : void {
