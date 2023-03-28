@@ -8,7 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-  weather: any;
+  hourlyWeather: any;
+  currentWeather: any;
+  forecastWeather:any;
 
   constructor(
     private route:ActivatedRoute,
@@ -19,10 +21,16 @@ export class WeatherComponent {
       this.route.queryParams.subscribe(params => {
       console.log(params);
       this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
-
-      console.log(temp);
-      this.weather = temp;
+        console.log(temp)
+        this.hourlyWeather = temp;      
       })
+      // this.weatherService.getWeather(params['lat'], params['lon'], "weekly").subscribe(temp => {
+      //   this.hourlyWeather = temp;      
+      // })
+      // this.weatherService.getWeather(params['lat'], params['lon'], "15 day").subscribe(temp => {
+      //   this.hourlyWeather = temp;      
+      // })
+
 
      });
       

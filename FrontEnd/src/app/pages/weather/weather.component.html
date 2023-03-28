@@ -1,7 +1,12 @@
 <p>weather works!</p>
-<pre>{{weather | json}}</pre>
+<!-- <pre>{{weather | json}}</pre> -->
 <mat-card>
     <mat-card-content>Simple card</mat-card-content>
   </mat-card>
+<div *ngFor="let val of hourlyWeather.list">
+  <h1>{{val.main.temp | TempConverter}}</h1>
+  <h2>{{val.dt_txt | DateConverter:hourlyWeather.city.timezone}}</h2>
+</div>
+  <!-- <app-hourly [weather]="weather"></app-hourly> -->
    
 
