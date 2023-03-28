@@ -3,6 +3,7 @@
 <a routerLink = ""><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></a>
 <a routerLink = "login"><mat-icon aria-hidden="false" aria-label="account_circle" fontIcon="account_circle" [ariaSetSize]="50" color="primary"></mat-icon></a>
 <!--a routerLink="weather">weather</a>-->
+<a routerLink="weather">weather</a>
 </div>
 <!-- <p>navbar works!</p> -->
 <mat-toolbar>
@@ -10,16 +11,10 @@
  <span class="myWeather">My Weather</span>
   </div>
   <span class="example-spacer"></span>
-  <div class="button-row">
-    <button class="buttons" mat-raised-button color="primary">Today</button>
-    <button class="buttons" mat-raised-button color="primary">Hourly</button>
-    <button class="buttons" mat-raised-button color="primary">10 day</button>
-    <button class="buttons" mat-raised-button color="primary">Weekend</button>
-    <button class="buttons" mat-raised-button color="primary">Monthly</button>
-    <button class="buttons" mat-raised-button color="primary">Radar</button>  
+  <div class="button-row"> 
     <button routerLink = "" mat-raised-button color="primary">home</button>
-    <button routerLink = "login" mat-raised-button color="primary">Login</button>
-    <button (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
+    <button [hidden]="hideButton" routerLink = "login" mat-raised-button color="primary">Login</button>
+    <button routerLink = "login" (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
     <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">Favorites</button>
     <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">History</button> 
   </div>

@@ -18,14 +18,21 @@ export class NavbarComponent {
       map(result => result.matches),
       shareReplay()
     );
+  hideButton = false;
 
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {}
     logout() {
       this.authService.isLoggedIn= false;
     }
   ifLoggedIn():boolean{
-    return this.authService.isLoggedIn;
-// needs to check LoggedIn boolean status. if true it will display favorites and
-// history. 
+    if(this.authService.isLoggedIn){
+      this.authService.isLoggedIn = true;
+      this.hideButton = true;
+      return this.authService.isLoggedIn;
+    }
+    else{
+      this.hideButton = false;
+      return this.authService.isLoggedIn;
+    }
   }
 }
