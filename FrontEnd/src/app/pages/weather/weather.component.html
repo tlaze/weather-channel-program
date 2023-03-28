@@ -8,7 +8,7 @@
   <img mat-card-image src="">
   <mat-card-content>
    
-    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
+    <!-- <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
     <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°</div>
     <div class="weatherWidgetRow" style="font-size: 12px;"> Low: {{weather.main.temp_min}}° / High: {{weather.main.temp_max}}°</div>
     <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{weather.main.feels_like}}°</div>
@@ -19,15 +19,11 @@
     <div class="weatherWidgetRow" style="font-size: 12px;">Wind: {{weather.wind.speed}} mph</div>
 
     <div class="weatherWidgetRow" style="font-size: 12px;">Sunrise: {{weather.sys.sunrise}}</div>
-    <div class="weatherWidgetRow" style="font-size: 12px;">Sunset: {{weather.sys.sunset}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Sunset: {{weather.sys.sunset}}</div> -->
 
   </mat-card-content>
 </mat-card>
 <!-- <pre>{{weather | json}}</pre> -->
-<div *ngFor="let val of hourlyWeather.list">
-  <h1>{{val.main.temp | TempConverter}}</h1>
-  <h2>{{val.dt_txt | DateConverter:hourlyWeather.city.timezone}}</h2>
-</div>
-  <!-- <app-hourly [weather]="weather"></app-hourly> -->
+  <app-hourly [weather]="hourlyWeather"></app-hourly>
    
 

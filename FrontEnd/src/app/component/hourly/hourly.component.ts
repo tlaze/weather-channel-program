@@ -7,7 +7,7 @@ import { HourlyWeather } from 'src/app/models/HourlyWeather';
   styleUrls: ['./hourly.component.css']
 })
 export class HourlyComponent {
-  @Input() weather:HourlyWeather ={cnt:0,code:"0", list:[],message:0 };
+  @Input() weather:any;
   consol() {
     console.log(this.weather);
   }

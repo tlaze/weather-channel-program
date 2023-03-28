@@ -1,5 +1,11 @@
 <p>hourly works!</p>
 <button (click)="consol()">Console log</button>
-<!-- <div *ngFor="let val of weather.list">
-    <h1>{{val.main.temp}}</h1>
-</div> -->
+<div *ngIf="weather !== undefined">
+    <div *ngFor="let val of weather.list" class="hourlyContainer">
+        <div>
+            <h1>{{val.main.temp| TempConverter }}</h1>
+            <h2>{{val.dt_txt | DateConverter}}</h2>
+            <h2>{{val.weather[0].description}}</h2>
+        </div>
+    </div>
+</div>

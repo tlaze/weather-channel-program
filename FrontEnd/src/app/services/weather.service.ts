@@ -34,7 +34,7 @@ export class WeatherService {
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
     console.log(lat, long, timeFrame)
-    if (timeFrame=="hourly") return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${this.apiKey}&units=metric`)
+    if (timeFrame=="hourly") return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${this.apiKey}&units=imperial`)
     if (timeFrame=="15 day") return  this.http.get<Object>(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C%20${long}?unitGroup=metric&key=DAL7VELFH2K3V3SX4BXEVLVY5&contentType=json`)
     return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${this.apiKey}&units=imperial`);
      
