@@ -20,11 +20,16 @@ export class WeatherComponent {
     ngOnInit() {
      console.log(this.route.queryParams);
       this.route.queryParams.subscribe(params => {
-      this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
-        console.log("TEMP:", temp)
-        this.hourlyWeather = temp;      
+        this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
+          console.log("TEMP:", temp)
+          this.hourlyWeather = temp;      
+        })
+        console.log(params);
+        this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe(temp => {
+        console.log(temp);
+        this.weather = temp;
+        })
       })
-     });
       
     }
 }
