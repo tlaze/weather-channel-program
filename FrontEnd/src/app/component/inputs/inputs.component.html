@@ -1,10 +1,6 @@
 <mat-card class="my-card">
+    <h1 style="text-align:center; margin:20px 0">What City's Weather would you like?</h1>
     <mat-card-content>
-        <div class="button-row">
-            <button mat-raised-button="null" (click)="changeTime('hourly')" [color] = "timeFrame==='hourly' ? 'accent' : 'primary'">Hourly</button>
-            <button mat-raised-button  (click)="changeTime('daily')" [color] = "timeFrame==='daily' ? 'accent' : 'primary'">Daily</button>
-            <button mat-raised-button (click)="changeTime('15 day')" [color] = "timeFrame==='15 day' ? 'accent' : 'primary'">15 Day</button>
-          </div>
         <form class="my-form locationForm">
         <div class="cityState">
             <mat-form-field class="full-width">
