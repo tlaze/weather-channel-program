@@ -1,4 +1,4 @@
-CREATE TABLE Accounts (
+CREATE TABLE Account (
   id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(255),
   password VARCHAR(255),
@@ -12,6 +12,6 @@ CREATE TABLE Location (
   city VARCHAR(255),
   state_id VARCHAR(255),
   state_name VARCHAR(255),
-  account INT,
-  FOREIGN KEY (account) REFERENCES Accounts(id)
+  accountid INT,
+  FOREIGN KEY (accountid) REFERENCES Account(id)
 );

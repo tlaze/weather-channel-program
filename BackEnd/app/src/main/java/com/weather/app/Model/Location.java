@@ -25,5 +25,5 @@ public class Location {
     @Column
     private String state_name;
     @Column
-    private int account;
+    private int accountid;
 }

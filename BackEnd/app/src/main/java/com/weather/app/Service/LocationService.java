@@ -21,8 +21,8 @@ public class LocationService {
         return locationRepository.findAll();
     }
 
-    public List<Location> getAllLocationsByAccount(int account) {
-        return locationRepository.findAllByAccount(account);
+    public List<Location> getAllLocationsByAccountid(int accountid) {
+        return locationRepository.findAllByAccountid(accountid);
     }
 
 }

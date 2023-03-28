@@ -1,11 +1,10 @@
-INSERT INTO Accounts (username, password, accountCreated, loggedIn)
+INSERT INTO Account (username, password, accountCreated, loggedIn)
 VALUES
   ('user1', 'pass1', true, false),
   ('user2', 'pass2', true, false),
   ('user3', 'pass3', false, true);
 
--- Insert data into the Location table
-INSERT INTO Location (zip, lat, lng, city, state_id, state_name, account)
+INSERT INTO Location (zip, lat, lng, city, state_id, state_name, accountid)
 VALUES
   (10001, '40.7505', '-73.9964', 'New York', 'NY', 'New York', 1),
   (75001, '32.7840', '-96.8088', 'Dallas', 'TX', 'Texas', 1),

@@ -22,8 +22,8 @@ public class LocationController {
     public List<Location> getAllLocations(){
         return locationService.getAllLocations();
     }
-    @GetMapping("locations/{account}")
-    public List<Location> getAllLocationsByAccount(@PathVariable int account) {
-        return locationService.getAllLocationsByAccount(account);
+    @GetMapping("locations/{accountid}")
+    public List<Location> getAllLocationsByAccount(@PathVariable int accountid) {
+        return locationService.getAllLocationsByAccountid(accountid);
     }
 }
