@@ -9,8 +9,10 @@ import lombok.*;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
+@Table
 public class Location {
     @Id
+    @Column
     private long zip;
     @Column
     private String lat;
@@ -22,4 +24,6 @@ public class Location {
     private String state_id;
     @Column
     private String state_name;
+    @Column
+    private int accountid;
 }
