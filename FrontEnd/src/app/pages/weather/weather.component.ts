@@ -18,9 +18,11 @@ export class WeatherComponent {
      console.log(this.route.queryParams);
       this.route.queryParams.subscribe(params => {
       console.log(params);
-      this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe(temp => {
+      this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe((temp: any) => {
 
       console.log(temp);
+      temp.sys.sunrise = new Date(temp.sys.sunrise * 1000);
+      temp.sys.sunset = new Date(temp.sys.sunrise * 1000);
       this.weather = temp;
       })
 
