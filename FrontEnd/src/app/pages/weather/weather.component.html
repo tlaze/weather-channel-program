@@ -9,6 +9,7 @@
   <mat-card-content>
    
     <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
+
     <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°</div>
     <div class="weatherWidgetRow" style="font-size: 12px;"> Low: {{weather.main.temp_min}}° / High: {{weather.main.temp_max}}°</div>
     <div class="weatherWidgetRow" style="font-size: 12px;">Current Conditions: {{weather.weather[0].description}}</div>
@@ -19,11 +20,12 @@
     <div class="weatherWidgetRow" style="font-size: 12px;">Visibility: {{weather.visibility}}</div>
     <div class="weatherWidgetRow" style="font-size: 12px;">Wind: {{weather.wind.speed}} mph</div>
 
-    <div class="weatherWidgetRow" style="font-size: 12px;">Sunrise: {{weather.sys.sunrise}}</div>
-    <div class="weatherWidgetRow" style="font-size: 12px;">Sunset: {{weather.sys.sunset}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Sunrise: {{weather.sys.sunrise | date: 'mediumTime'}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Sunset: {{weather.sys.sunset | date: 'mediumTime'}}</div>
+
 
   </mat-card-content>  
 </mat-card>
-<pre>{{weather | json}}</pre>
+<app-hourly [weather]="hourlyWeather"></app-hourly>
    
 

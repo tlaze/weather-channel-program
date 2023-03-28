@@ -30,6 +30,9 @@ import { CommonModule } from '@angular/common';
 import { HourlyComponent } from './component/hourly/hourly.component';
 import { TodayComponent } from './component/today/today.component';
 import { WeeklyComponent } from './component/weekly/weekly.component';
+import { TempConverter } from './pipes/TempConverter';
+import { DateConverter } from './pipes/DateConverter';
+import { SafeHTML } from './pipes/SafeHTML';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { WeeklyComponent } from './component/weekly/weekly.component';
     HourlyComponent,
     TodayComponent,
     WeeklyComponent,
+    TempConverter,
+    DateConverter,
+    SafeHTML
   ],
   
   imports: [

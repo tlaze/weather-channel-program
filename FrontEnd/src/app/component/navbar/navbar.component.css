@@ -20,16 +20,31 @@
   z-index: 1;
 }
 
-.button-row {
-  padding: 5%;
-}
-
-.buttons {
-  margin-left: 3%;
+.button-row>button {
+  margin-right: 7px;
 }
 
 .logo{
   width: 5%;
   height: auto;
   padding: 1%;
+}
+.myWeather {
+  display:inline;
+  margin:0 0 0 10px;
+}
+.navContainer {
+  display: flex;
+  flex:4
+}
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex: 3;
+}
+.button-row {
+  display: flex;
+  flex: 1;
+  justify-content: right;
 }

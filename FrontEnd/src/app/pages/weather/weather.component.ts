@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 import { ActivatedRoute } from '@angular/router';
+import { HourlyWeather } from 'src/app/models/HourlyWeather';
 
 @Component({
   selector: 'app-weather',
@@ -8,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
+  hourlyWeather: any;
   weather: any;
+  forecastWeather:any;
 
   constructor(
     private route:ActivatedRoute,
@@ -22,11 +25,10 @@ export class WeatherComponent {
 
       console.log(temp);
       temp.sys.sunrise = new Date(temp.sys.sunrise * 1000);
-      temp.sys.sunset = new Date(temp.sys.sunrise * 1000);
+      temp.sys.sunset = new Date(temp.sys.sunset * 1000);
       this.weather = temp;
-      })
-
-     });
+      });
       
-    }
+    });
+  }
 }
