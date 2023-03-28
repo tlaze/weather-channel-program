@@ -5,13 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,6 +22,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputsComponent } from './component/inputs/inputs.component';
+// import { FormSchemaComponent } from './form-schema/form-schema.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { WeatherComponent } from './pages/weather/weather.component';
+import { CommonModule } from '@angular/common';
+import { HourlyComponent } from './component/hourly/hourly.component';
+import { TodayComponent } from './component/today/today.component';
+import { WeeklyComponent } from './component/weekly/weekly.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +37,19 @@ import { InputsComponent } from './component/inputs/inputs.component';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent,
     InputsComponent,
+    // FormSchemaComponent,
+    WeatherComponent,
+    RegisterComponent,
+    HourlyComponent,
+    TodayComponent,
+    WeeklyComponent,
   ],
   
   imports: [
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -49,6 +63,9 @@ import { InputsComponent } from './component/inputs/inputs.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

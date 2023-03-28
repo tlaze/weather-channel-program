@@ -1,0 +1,28 @@
+<!--<p>weather works!</p>-->
+<mat-card class="my-weather-card">
+  <mat-card-header>
+    <div mat-card-avatar class="header">
+      <mat-card-title>Today</mat-card-title>
+    </div>
+  </mat-card-header>
+  <img mat-card-image src="">
+  <mat-card-content>
+   
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;"> Low: {{weather.main.temp_min}}° / High: {{weather.main.temp_max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{weather.main.feels_like}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Pressure: {{weather.main.pressure}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Humidity: {{weather.main.humidity}}%</div>
+
+    <div class="weatherWidgetRow" style="font-size: 12px;">Visibility: {{weather.visibility}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Wind: {{weather.wind.speed}} mph</div>
+
+    <div class="weatherWidgetRow" style="font-size: 12px;">Sunrise: {{weather.sys.sunrise}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Sunset: {{weather.sys.sunset}}</div>
+
+  </mat-card-content>
+</mat-card>
+<pre>{{weather | json}}</pre>
+   
+

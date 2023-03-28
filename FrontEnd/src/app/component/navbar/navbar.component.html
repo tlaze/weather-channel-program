@@ -1,31 +1,21 @@
 <div class="home">
-<a routerLink = "">home</a>
-<a routerLink = "login">login</a>
+<a routerLink=""><img class="logo" src="assets/weatherImages/inclement.png"></a>
+<a routerLink = ""><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></a>
+<a routerLink = "login"><mat-icon aria-hidden="false" aria-label="account_circle" fontIcon="account_circle" [ariaSetSize]="50" color="primary"></mat-icon></a>
+<!--a routerLink="weather">weather</a>-->
+<a routerLink="weather">weather</a>
 </div>
 <!-- <p>navbar works!</p> -->
 <mat-toolbar>
   <div>
-  <img class="logo" src="assets/weatherImages/inclement.png">
  <span class="myWeather">My Weather</span>
- </div>
- <span class="example-spacer"></span>
- <div class="button-row">
-  <button class="buttons" mat-raised-button color="primary">Today</button>
-  <button class="buttons" mat-raised-button color="primary">Hourly</button>
-  <button class="buttons" mat-raised-button color="primary">10 day</button>
-  <button class="buttons" mat-raised-button color="primary">Weekend</button>
-  <button class="buttons" mat-raised-button color="primary">Monthly</button>
-  <button class="buttons" mat-raised-button color="primary">Radar</button>  
-  <button routerLink = "" mat-raised-button color="primary">home</button>
-  <button routerLink = "login" mat-raised-button color="primary">Login</button>
-  <button (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
-  <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">Favorites</button>
-  <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">History</button> 
-</div>
- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-   <mat-icon>favorite</mat-icon>
- </button>
- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-  <mat-icon>share</mat-icon>
-</button>
+  </div>
+  <span class="example-spacer"></span>
+  <div class="button-row"> 
+    <button routerLink = "" mat-raised-button color="primary">home</button>
+    <button [hidden]="hideButton" routerLink = "login" mat-raised-button color="primary">Login</button>
+    <button routerLink = "login" (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
+    <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">Favorites</button>
+    <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">History</button> 
+  </div>
 </mat-toolbar>
