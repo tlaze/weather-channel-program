@@ -20,7 +20,7 @@ export class WeatherComponent {
      console.log(this.route.queryParams);
       this.route.queryParams.subscribe(params => {
       console.log(params);
-      this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
+      this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe(temp => {
         console.log(temp)
         this.hourlyWeather = temp;      
       })
