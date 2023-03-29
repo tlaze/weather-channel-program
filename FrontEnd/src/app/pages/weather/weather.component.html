@@ -7,8 +7,7 @@
   </mat-card-header>
   <img mat-card-image src="">
   <mat-card-content>
-   
-    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
+
     <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
 
     <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°</div>
@@ -26,7 +25,8 @@
 
   </mat-card-content>
 </mat-card>
-<pre>{{weather | json}}</pre>
 <app-hourly [weather]="hourlyWeather"></app-hourly>
-   
+
+<app-weekly [weather]="weeklyWeather"></app-weekly>
+
 

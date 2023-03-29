@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 import { ActivatedRoute } from '@angular/router';
 import { HourlyWeather } from 'src/app/models/HourlyWeather';
+import { WeeklyWeather } from 'src/app/models/WeeklyWeather';
 
 @Component({
   selector: 'app-weather',
@@ -12,6 +13,7 @@ export class WeatherComponent {
   hourlyWeather: any;
   weather: any;
   forecastWeather:any;
+  weeklyWeather:any;
 
   constructor(
     private route:ActivatedRoute,
@@ -21,15 +23,18 @@ export class WeatherComponent {
      console.log(this.route.queryParams);
       this.route.queryParams.subscribe(params => {
         this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
-          console.log("TEMP:", temp)
-          this.hourlyWeather = temp;      
+          console.log("TEMP:", temp);
+          this.hourlyWeather = temp;
         })
         console.log(params);
         this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe(temp => {
         console.log(temp);
         this.weather = temp;
         })
+        this.weatherService.getWeather(params['lat'], params['lon'], "15 day").subscribe(temp => {
+          console.log("Weekly: ", temp);
+          this.weeklyWeather = temp;
+        })
       })
-      
     }
 }

@@ -1,0 +1,19 @@
+.weeklyContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 20px;
+    padding: 30px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(7,7,66,1) 69%, rgba(8,8,69,1) 69%, rgba(7,9,103,1) 100%);border-radius: 10px;
+    color:#DAF5FF;
+}
+
+.weeklyBox {
+    display: flex;
+    min-width: 100px;
+    height: 200px;
+    text-align: center;
+}
+.insideBox>h1,.insideBox>h2 {
+    margin:10px;
+}
