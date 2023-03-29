@@ -1,10 +1,12 @@
+<h1 style="text-align:center">Weekly Forecast</h1>
 <div *ngIf="weather !== undefined" class="weeklyContainer" draggable="true">
-  <div *ngFor="let val of weather.days; let i=index" class="weeklyBox">
-    <div *ngIf="i < 7" class="insideBox">
-      <h2>{{val.datetime | date: 'MMM d' }}</h2>
-      <div><i [class]="getIcon(val.icon)" style="font-size:2rem"></i></div>
-      <h2 style="display:inline;">{{getFahrenheit(val.temp) }}</h2>
-      <h2 style="font-size:15px;">{{val.conditions}}</h2>
+  <div class="weeklyBox">
+    <div *ngFor="let val of weather.days.slice(0,7); let i=index">
+      <div class="insideBox">
+        <h2>{{val.datetime | date: 'MMM d' }}</h2>
+        <div><i [class]="getIcon(val.icon)" style="font-size:3rem"></i></div>
+        <h2>{{getFahrenheit(val.temp) }}</h2>
+      </div>
     </div>
   </div>
 </div>
