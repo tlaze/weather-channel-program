@@ -31,10 +31,11 @@ export class AuthService {
     header.append("Access-Control-Allow-Origin", "*");
     return this.http.patch<Account>(`http://127.0.0.1:9000/account/${id}`, {loggedIn: true}, {headers:header});
   }
-  // getLoginStatus(id: number): Observable<Account>{
-  //   let header : HttpHeaders = new HttpHeaders();
-  //   header.append("accept", "text/json");
-  //   header.append("Access-Control-Allow-Origin", "*");
-  //   return this.http.get<Account>(`http://127.0.0.1:9000/account"/${id}`, {headers:header});
-  // }
+  logoutUser(id : number): Observable<Account>{
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http.patch<Account>(`http://127.0.0.1:9000/account/${id}`, {loggedIn: false}, {headers:header});
+  }
+
 }
