@@ -44,10 +44,11 @@ export class LoginComponent implements OnInit {
         if(this.username == data[i].username && this.password == data[i].password){
           console.log("account exists");
           console.log(data[i].id);
+          localStorage.setItem("login", this.idAsNumber(data[i].id) as unknown as string)
+          this.authService.isLoggedIn = true;
+          this.authService.loginID = this.idAsNumber(data[i].id);
           this.authService.loginUser(this.idAsNumber(data[i].id)).subscribe( json => {
             this.refreshEvent.emit()
-            localStorage.setItem("login", "true")
-            this.authService.isLoggedIn = true;
             console.log(json);
             this.router.navigateByUrl('home');
           });

@@ -10,9 +10,11 @@ import { Account } from '../models/account.module';
 
 export class AuthService {
   isLoggedIn:boolean = false;
+  loginID:number = 0;
 
   constructor(private http: HttpClient) { 
     this.isLoggedIn = localStorage.getItem('login') as unknown as boolean
+    this.loginID = localStorage.getItem('login') as unknown as number
   }
 
   registerNewUser(account: Account): Observable<Account>{

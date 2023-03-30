@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Location } from 'src/app/models/location.module';
 
 @Component({
   selector: 'app-locations',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./locations.component.css']
 })
 export class LocationsComponent {
+  @Input()
+  userLocations: Location[] = [];
+  
 
+  
 }

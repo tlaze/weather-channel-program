@@ -4,5 +4,7 @@ export interface Location {
     lon?:number,
     city?:String,
     state_id?:String,
-    state_name?:String
+    state_name?:String,
+    account_id?:number,
+    
 }

@@ -43,6 +43,7 @@ export class NavbarComponent {
         for(let i = 0; i < data.length; i++){
           this.authService.logoutUser(this.idAsNumber(data[i].id)).subscribe(json=>{
             this.authService.isLoggedIn = false;
+            this.authService.loginID = 0;
             localStorage.setItem("login", "");
           });
         }
