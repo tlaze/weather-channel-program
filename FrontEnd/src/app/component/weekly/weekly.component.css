@@ -10,10 +10,14 @@
 
 .weeklyBox {
     display: flex;
+    flex:7;
     min-width: 100px;
-    height: 200px;
+    height: 100px;
     text-align: center;
+    justify-content: space-around;
+    margin: 10px;
+    align-items:center;
 }
-.insideBox>h1,.insideBox>h2 {
-    margin:10px;
+.insideBox{
+    flex:1;
 }

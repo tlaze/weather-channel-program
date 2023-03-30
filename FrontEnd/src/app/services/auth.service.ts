@@ -12,7 +12,7 @@ export class AuthService {
   isLoggedIn:boolean = false;
 
   constructor(private http: HttpClient) { }
- 
+
   registerNewUser(account: Account): Observable<Account>{
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
