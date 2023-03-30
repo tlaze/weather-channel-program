@@ -13,6 +13,8 @@ import lombok.*;
 public class Location {
     @Id
     @Column
+    private int locationid;
+    @Column
     private long zip;
     @Column
     private String lat;
@@ -26,4 +28,6 @@ public class Location {
     private String state_name;
     @Column
     private int accountid;
+    @Column
+    private boolean favorites;
 }

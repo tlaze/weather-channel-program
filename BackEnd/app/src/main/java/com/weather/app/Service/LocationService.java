@@ -24,5 +24,8 @@ public class LocationService {
     public List<Location> getAllLocationsByAccountid(int accountid) {
         return locationRepository.findAllByAccountid(accountid);
     }
+    public List<Location> getAllFavorites(int accountid, boolean favorite) {
+        return locationRepository.findAllByAccountidAndFavorites(accountid, favorite);
+    }
 
 }
