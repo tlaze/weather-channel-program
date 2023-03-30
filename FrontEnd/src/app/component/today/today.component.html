@@ -10,21 +10,24 @@
     <i class="fas fa-cloud fa-3x cloud"></i>
   </div>
 
-  <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
-
+  <div class="weatherWidgetRow" style="font-size: 35px;margin-top: 10px;">{{weather.name}}</div>  
   <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°</div>
-  <div class="weatherWidgetRow" style="font-size: 14px;"> Low: {{weather.main.temp_min}}° / High:
+  <div class="weatherWidgetRow" style="font-size: 15px;">Current Conditions: {{weather.weather[0].description}}</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;"> Low: {{weather.main.temp_min}}° / High:
     {{weather.main.temp_max}}°</div>
-  <div class="weatherWidgetRow" style="font-size: 14px;">Current Conditions: {{weather.weather[0].description}}</div>
-  <div class="weatherWidgetRow" style="font-size: 14px;">Feels Like: {{weather.main.feels_like}}°</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;">Feels Like: {{weather.main.feels_like}}°</div>
   <!--<div class="weatherWidgetRow" style="font-size: 12px;">Pressure: {{weather.main.pressure}}</div>-->
-  <div class="weatherWidgetRow" style="font-size: 14px;">Humidity: {{weather.main.humidity}}%</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;">Humidity: {{weather.main.humidity}}%</div>
 
-  <div class="weatherWidgetRow" style="font-size: 14px;">Visibility: {{weather.visibility}}</div>
-  <div class="weatherWidgetRow" style="font-size: 14px;">Wind: {{weather.wind.speed}} mph</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;">Visibility: {{weather.visibility}}</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;">Wind: {{weather.wind.speed}} mph</div>
 
-  <div class="weatherWidgetRow" style="font-size: 14px;">Sunrise: {{weather.sys.sunrise | date: 'mediumTime'}}</div>
-  <div class="weatherWidgetRow" style="font-size: 14px;">Sunset: {{weather.sys.sunset | date: 'mediumTime'}}</div>
-
+  <div class="weatherWidgetRow" style="font-size: 15px;">Sunrise: {{weather.sys.sunrise | date: 'mediumTime'}}</div>
+  <div class="weatherWidgetRow" style="font-size: 15px;">Sunset: {{weather.sys.sunset | date: 'mediumTime'}}</div>
+  <div>
+    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
 
 </mat-card>

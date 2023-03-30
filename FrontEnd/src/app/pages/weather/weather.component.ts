@@ -25,6 +25,8 @@ export class WeatherComponent {
       this.weatherService.getWeather(params['lat'], params['lon'], params['hourly']).subscribe((temp: any) => {
       temp.sys.sunrise = new Date(temp.sys.sunrise * 1000);
       temp.sys.sunset = new Date(temp.sys.sunset * 1000);
+      let currentDate = new Date();
+      temp.isDay = temp.sys.sunrise.getTime() < currentDate.getTime() && currentDate.getTime() < temp.sys.sunset.getTime();
       this.weather = temp;
       });
         this.weatherService.getWeather(params['lat'], params['lon'], "hourly").subscribe(temp => {
