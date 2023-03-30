@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     overflow: auto;
+    justify-content: space-between;
     margin: 30px 20px;
     padding-top: 30px;
     background: rgb(0,0,0);
@@ -14,8 +15,12 @@
     height: 200px;
     justify-content: center;
     text-align: center;
+    
 }
 
 .insideBox>h1,.insideBox>h2 {
     margin:10px 0;
+}
+.insideBox {    
+    min-width: 100px;
 }
