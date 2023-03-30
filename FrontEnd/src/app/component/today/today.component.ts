@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-today',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./today.component.css']
 })
 export class TodayComponent {
-
+  @Input() weather:any;
 }

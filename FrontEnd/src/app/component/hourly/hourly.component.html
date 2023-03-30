@@ -1,15 +1,13 @@
 <div *ngIf="weather !== undefined" class="hourlyContainer" draggable="true">
-    <div *ngFor="let val of weather.list" class="hourlyBox"  >
-        <div class="insideBox">
+    <div *ngFor="let val of weather.list.slice(0,12)" class="hourlyBox"  >
+        <div [ngStyle]="{'border-right':((val.dt_txt|DateConverter)=='12 AM') ? '1px dashed rgba(255, 255, 255, 0.707)' :''}"  class="insideBox">
             <h2>{{val.dt_txt | DateConverter}}</h2>
             <h2>{{val.weather[0].description.split(" ")[1] }}</h2>
             <div style="text-align: center;">
             <i [class]="getIcon(val.weather[0].description.split(' ')[1]) | SafeHtml"  style="font-size:2rem" ></i>
-
         </div>
         <div>
         <h1 style="display: inline;">{{val.main.temp| TempConverter }}</h1>
-        <!-- <i style="font-size: .3rem;position: relative; top:0;" class="fa-regular fa-circle"></i> -->
     </div>
         </div>
     </div>
