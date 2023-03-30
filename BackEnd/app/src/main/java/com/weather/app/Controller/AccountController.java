@@ -22,6 +22,10 @@ public class AccountController {
     public List<Account> getAllAccounts() {
         return accountService.getAllAccounts();
     }
+    @GetMapping("account/{id}")
+    public Account getAccountById(@PathVariable long id) {
+        return accountService.getAccountById(id);
+    }
     @PatchMapping("account/{id}")
     public Account loginUser(@RequestBody Account account, @PathVariable long id){
         return accountService.changeLoginStatus(id, account);

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AccountService {
@@ -24,5 +25,8 @@ public class AccountService {
         Account newAccount = accountRepository.findById(id).get();
         newAccount.setLoggedIn(account.getLoggedIn());
         return newAccount;
+    }
+    public Account getAccountById(long id) {
+        return accountRepository.findById(id).orElse(null);
     }
 }
