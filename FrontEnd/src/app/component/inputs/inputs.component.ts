@@ -5,7 +5,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-inputs',
-  templateUrl: './inputs.component.html', 
+  templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.css'],
 })
 export class InputsComponent {
@@ -16,7 +16,7 @@ export class InputsComponent {
   timeFrame:string = "hourly";
   constructor(private weatherService : WeatherService,
               private router: Router){}
-  
+
   convert(value: number|undefined) : number {
     return value as number;
   }
@@ -41,6 +41,9 @@ export class InputsComponent {
     } else if (this.city !== "" && this.state !== "") {
       this.weatherService.getLocationCityState(this.city, this.state).subscribe(data => {
         let a : Location[] = data;
+        if(a.length == 0){
+        this.error = "Please input valid location";
+        }
         this.router.navigate(['/weather'], {queryParams: {
           lat: this.convert(a[0].lat),
           lon: this.convert(a[0].lon)
