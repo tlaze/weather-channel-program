@@ -41,7 +41,10 @@ export class InputsComponent {
     } else if (this.city !== "" && this.state !== "") {
       this.weatherService.getLocationCityState(this.city, this.state).subscribe(data => {
         let a : Location[] = data;
-        this.router.navigate(['/weather']);
+        this.router.navigate(['/weather'], {queryParams: {
+          lat: this.convert(a[0].lat),
+          lon: this.convert(a[0].lon)
+        }});
         // this.weatherService.getWeather(this.convert(a[0].lat), this.convert(a[0].lon)).subscribe(temp => {
         //   console.log(temp)
         // });
