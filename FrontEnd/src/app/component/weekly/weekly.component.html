@@ -4,7 +4,8 @@
     <div *ngFor="let val of weather.days.slice(0,7); let i=index">
       <div class="insideBox">
         <h2>{{val.datetime | date: 'MMM d' }}</h2>
-        <div><i [class]="getIcon(val.icon)" style="font-size:3rem"></i></div>
+        <div><i [class]="getIcon(val.icon)" style="font-size:2rem"></i></div>
+        <br>
         <h2>{{getFahrenheit(val.temp) }}</h2>
       </div>
     </div>

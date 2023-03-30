@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   @Output()
   refreshEvent : EventEmitter<any> = new EventEmitter<any>();
-  
+
 
   noAccountMessage:boolean = false;
   noMatchMessage:boolean = false;
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void{
-    
+
     this.authService.getRegisteredUsers().subscribe(data =>{
       console.log(data);
       this.refreshEvent.emit()
