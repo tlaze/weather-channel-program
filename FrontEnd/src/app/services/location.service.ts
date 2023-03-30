@@ -12,6 +12,12 @@ export class LocationService {
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.post<Location[]>(`http://127.0.0.1:9000/account/${id}`, {headers:header});
+    return this.http.get<Location[]>(`http://127.0.0.1:9000/locations/${id}`, {headers:header});
+  }
+  getFavoritesByID(id:number ) : Observable<Location[]> {
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http.get<Location[]>(`http://127.0.0.1:9000/locations/${id}/favorites`, {headers:header});
   }
 }

@@ -9,6 +9,13 @@ import { Location } from 'src/app/models/location.module';
 export class LocationsComponent {
   @Input()
   userLocations: Location[] = [];
+  @Input()
+  locationType: string="";
+  
+
+  ngOnChanges() {
+    console.log(this.userLocations)
+  }
   
 
   

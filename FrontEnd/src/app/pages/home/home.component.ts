@@ -10,10 +10,17 @@ import { LocationService } from 'src/app/services/location.service';
 })
 export class HomeComponent implements OnInit{
   loginID: number;
-  location:Location[] = []
+  location:any[] = []
+  favorites:any[]=[];
   constructor(private authService:AuthService, private locationService :LocationService) {
     this.loginID = authService.loginID;
     if (this.loginID != 0) {
+      this.locationService.getLocationByID(this.loginID).subscribe(json => {
+        this.location = json;
+      })
+      this.locationService.getFavoritesByID(this.loginID).subscribe(json => {
+        this.favorites = json;
+      })
 
     }
   }

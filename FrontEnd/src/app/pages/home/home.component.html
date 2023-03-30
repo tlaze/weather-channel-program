@@ -1,2 +1,3 @@
 <app-inputs></app-inputs>
-<app-locations *ngIf="loginCheck()"></app-locations>
+<app-locations *ngIf="loginCheck()" [userLocations]="location" [locationType]="'History'"></app-locations>
+<app-locations *ngIf="loginCheck()" [userLocations]="favorites" [locationType]="'Favorites'"></app-locations>

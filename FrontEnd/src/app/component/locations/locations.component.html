@@ -1,1 +1,5 @@
-<h1>CAN YOU SEE ME</h1>
+<h1>{{locationType}}</h1>
+
+<div *ngFor="let val of userLocations">
+    <button>{{val.city}}</button>
+</div>
