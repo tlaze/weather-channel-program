@@ -11,7 +11,9 @@ import { Account } from '../models/account.module';
 export class AuthService {
   isLoggedIn:boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.isLoggedIn = localStorage.getItem('login') as unknown as boolean
+  }
 
   registerNewUser(account: Account): Observable<Account>{
     let header : HttpHeaders = new HttpHeaders();
