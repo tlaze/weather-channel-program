@@ -1,4 +1,4 @@
-.my-weather-card {
+.my-weatherToday {
     display: block;
     border-radius: 3%;
     width: 40%;
@@ -9,6 +9,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 30%;
     margin-top: 5%;
+    padding: 2%;
 }
 
 .weatherWidgetRow{
@@ -16,4 +17,34 @@
     margin:0 auto;
     width: fit-content;
     padding: 0.5%;
+}
+
+.sun{
+    margin-top: 10px;
+    color: yellow;
+    filter: drop-shadow( 1px 1px 10px yellow);
+}
+
+.moon{
+    margin-top: 10px;
+    color: white;
+    filter: drop-shadow( 1px 1px 10px white);
+}
+
+.cloudDiv{
+    margin-top: -40px;
+}
+
+.cloud{
+    color: rgb(104, 175, 197);
+    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes cloudMovement{
+    from{margin-left: -55px;}
+    to{margin-left: 65px;}
 }
