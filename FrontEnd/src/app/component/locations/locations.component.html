@@ -1,1 +1,8 @@
-<p>locations works!</p>
+<div class="locationContainer">
+    <h1>{{locationType}}</h1>
+    <div class="locationBox">
+        <div *ngFor="let val of userLocations">
+            <button  mat-raised-button class="locationButton" color="primary" (click)="onSubmit(val.lat, val.lng)">{{val.city}}</button>
+        </div>
+    </div>
+</div>
