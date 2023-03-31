@@ -26,4 +26,9 @@ public class LocationController {
     public List<Location> getAllLocationsByAccount(@PathVariable int accountid) {
         return locationService.getAllLocationsByAccountid(accountid);
     }
+    @GetMapping("locations/{accountid}/favorites")
+    public List<Location> getAllFavorites(@PathVariable int accountid) {
+        boolean favorite = true;
+        return locationService.getAllFavorites(accountid, favorite);
+    }
 }

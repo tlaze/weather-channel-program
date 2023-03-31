@@ -34,6 +34,7 @@ import { TempConverter } from './pipes/TempConverter';
 import { DateConverter } from './pipes/DateConverter';
 import { SafeHTML } from './pipes/SafeHTML';
 import { FooterComponent } from './component/footer/footer.component';
+import { LocationsComponent } from './component/locations/locations.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { FooterComponent } from './component/footer/footer.component';
     TempConverter,
     DateConverter,
     SafeHTML,
-    FooterComponent
+    FooterComponent,
+    LocationsComponent,
   ],
   
   imports: [

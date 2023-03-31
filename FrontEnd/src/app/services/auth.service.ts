@@ -10,8 +10,12 @@ import { Account } from '../models/account.module';
 
 export class AuthService {
   isLoggedIn:boolean = false;
+  loginID:number = 0;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.isLoggedIn = localStorage.getItem('login') as unknown as boolean
+    this.loginID = localStorage.getItem('login') as unknown as number
+  }
 
   registerNewUser(account: Account): Observable<Account>{
     let header : HttpHeaders = new HttpHeaders();
@@ -31,10 +35,11 @@ export class AuthService {
     header.append("Access-Control-Allow-Origin", "*");
     return this.http.patch<Account>(`http://127.0.0.1:9000/account/${id}`, {loggedIn: true}, {headers:header});
   }
-  // getLoginStatus(id: number): Observable<Account>{
-  //   let header : HttpHeaders = new HttpHeaders();
-  //   header.append("accept", "text/json");
-  //   header.append("Access-Control-Allow-Origin", "*");
-  //   return this.http.get<Account>(`http://127.0.0.1:9000/account"/${id}`, {headers:header});
-  // }
+  logoutUser(id : number): Observable<Account>{
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http.patch<Account>(`http://127.0.0.1:9000/account/${id}`, {loggedIn: false}, {headers:header});
+  }
+
 }
