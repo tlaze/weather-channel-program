@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit{
   loginID: number;
   location:any[] = []
   favorites:any[]=[];
+  lat:number = 0
+  lon:number = 0
   constructor(private authService:AuthService, private locationService :LocationService) {
     this.loginID = authService.loginID;
     if (this.loginID != 0) {
@@ -28,6 +30,12 @@ export class HomeComponent implements OnInit{
     return this.authService.isLoggedIn
   }
   ngOnInit(): void {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {        
+        this.lat = position.coords.latitude
+        this.lon =  position.coords.longitude
+      })
+    }
 
   }
 
