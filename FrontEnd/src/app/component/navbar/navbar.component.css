@@ -35,7 +35,7 @@
 }
 .navContainer {
   display: flex;
-  flex:4
+  flex:4;
 }
 .logoWrapper {
   display: flex;

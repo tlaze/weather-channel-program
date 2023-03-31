@@ -5,6 +5,14 @@
     max-width: 1200px;
     margin: auto;
 }
+.history2 {
+    padding-left: 10px;
+    display: none;
+}
+.favorites2 {
+    padding-right: 10px;
+    display: none;
+}
 .history {
     padding-left: 10px;
 }
@@ -20,5 +28,13 @@
     }
     .favorites {
         display: none;
+    }
+    .history2 {
+        display: block;
+        text-align: center;
+    }
+    .favorites2 {
+        display: block;
+        margin: auto;
     }
 }
