@@ -33,6 +33,7 @@ import { WeeklyComponent } from './component/weekly/weekly.component';
 import { TempConverter } from './pipes/TempConverter';
 import { DateConverter } from './pipes/DateConverter';
 import { SafeHTML } from './pipes/SafeHTML';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SafeHTML } from './pipes/SafeHTML';
     WeeklyComponent,
     TempConverter,
     DateConverter,
-    SafeHTML
+    SafeHTML,
+    FooterComponent
   ],
   
   imports: [

@@ -11,7 +11,7 @@ export class TodayComponent {
     console.log(this.weather);
   }
   // Icon list: https://www.angularjswiki.com/fontawesome/weather/
-  getIcon(climate:string) : string {
+  /*getIcon(climate:string) : string {
     if (climate == "sky") {
       return "fas fa-sun "
     }
@@ -27,6 +27,6 @@ export class TodayComponent {
     if (climate =="clouds") return "grey"
     return ""
     
-  }
+  }*/
 
 }
