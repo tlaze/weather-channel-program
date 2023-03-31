@@ -1,3 +1,5 @@
-<app-inputs></app-inputs>
-<app-locations *ngIf="loginCheck()" [userLocations]="location" [locationType]="'History'"></app-locations>
-<app-locations *ngIf="loginCheck()" [userLocations]="favorites" [locationType]="'Favorites'"></app-locations>
+<div class="homeContainer">
+    <app-locations class="history" *ngIf="loginCheck()" [userLocations]="location" [locationType]="'History'"></app-locations>
+    <app-inputs></app-inputs>
+    <app-locations class="favorites" *ngIf="loginCheck()" [userLocations]="favorites" [locationType]="'Favorites'"></app-locations>
+</div>

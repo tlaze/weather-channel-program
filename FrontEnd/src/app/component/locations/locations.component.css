@@ -1,0 +1,12 @@
+.locationContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+.locationBox {
+    text-align: center;
+}
+.locationButton {
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+}

@@ -9,7 +9,5 @@
     </button>
     <button [hidden]="hideButton" routerLink = "login" mat-raised-button color="primary">Login</button>
     <button routerLink = "login" (click)="logout()" *ngIf="ifLoggedIn()" mat-raised-button color="primary">Logout</button>
-    <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">Favorites</button>
-    <button mat-raised-button *ngIf="ifLoggedIn()" color="primary">History</button> 
   </div>
 </mat-toolbar>

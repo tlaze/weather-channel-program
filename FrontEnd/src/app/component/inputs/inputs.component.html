@@ -1,5 +1,5 @@
-<mat-card class="my-card">
-    <h1 style="text-align:center; margin:20px 0">What City's Weather would you like?</h1>
+<div class="my-card" style="padding:0 10px">
+    <h1 style="text-align:center; margin:20px 0">Enter City or Zip Code</h1>
     <mat-card-content>
         <form class="my-form locationForm">
         <div class="cityState">
@@ -19,13 +19,11 @@
             </mat-form-field>
         </form>
     </mat-card-content>
-    <div style="margin:auto">
-        <mat-card-actions>
+    <div style="margin:auto; text-align: center;">
             <button mat-raised-button (click)="submit()" style="text-align:center" color="primary">Submit</button>
-        </mat-card-actions>
     </div>
     <p class="errorMessage">{{error}}</p>
-</mat-card>
+</div>
 
 
 
