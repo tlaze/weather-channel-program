@@ -39,4 +39,6 @@ export class WeatherService {
     return this.http.get<Object>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${this.apiKey}&units=imperial`);
      
   }
+
+  
 }

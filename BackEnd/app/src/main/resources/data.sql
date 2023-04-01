@@ -4,7 +4,7 @@ VALUES
   ('user2', 'pass2', true, false),
   ('user3', 'pass3', true, true);
 
-INSERT INTO Location (zip, lat, lng, city, state_id, state_name, accountid, favorites)
+INSERT INTO Location (zip, lat, lon, city, state_id, state_name, accountid, favorites)
 VALUES
 (10001, '40.7505', '-73.9964', 'New York', 'NY', 'New York', 1, true),
 (75001, '32.7840', '-96.8088', 'Dallas', 'TX', 'Texas', 1, false),
