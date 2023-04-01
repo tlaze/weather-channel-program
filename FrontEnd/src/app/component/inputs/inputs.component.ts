@@ -61,12 +61,16 @@ export class InputsComponent {
         a[0].accountid = Number(id);
         console.log(a)
         console.log("test")
-        this.locationService.addLocation(a[0]);
+        this.locationService.addLocation(a[0]).subscribe((json) => {
+          this.router.navigate(['/weather'], {queryParams: {
+            lat: this.convert(a[0].lat),
+            lon: this.convert(a[0].lon),
+            locationID: this.convert(json.locationid),
+            favorite:"false"
+          }});
 
-        this.router.navigate(['/weather'], {queryParams: {
-          lat: this.convert(a[0].lat),
-          lon: this.convert(a[0].lon)
-        }});
+        });
+
         // this.weatherService.getWeather(this.convert(a[0].lat), this.convert(a[0].lon)).subscribe(temp => {
         //   console.log(temp)
         // });
