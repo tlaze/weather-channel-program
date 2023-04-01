@@ -37,12 +37,15 @@ export class InputsComponent {
         a.accountid = Number(id);
         console.log(a)
         console.log("test")
-        this.locationService.addLocation(a);
+        this.locationService.addLocation(a).subscribe((json) => {
+          this.router.navigate(['/weather'], {queryParams: {
+            lat: this.convert(a.lat),
+            lon: this.convert(a.lon),
+            locationID: this.convert(json.locationid),
+            favorite:"false"
+          }});
 
-        this.router.navigate(['/weather'], {queryParams: {
-          lat: this.convert(a.lat),
-          lon: this.convert(a.lon)
-        }});
+        });
         
         // this.weatherService.getWeather(this.convert(a.lat), this.convert(a.lon)).subscribe(temp => {
         //   console.log(temp)
