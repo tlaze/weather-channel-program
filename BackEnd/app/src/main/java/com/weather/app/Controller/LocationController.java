@@ -31,4 +31,8 @@ public class LocationController {
         boolean favorite = true;
         return locationService.getAllFavorites(accountid, favorite);
     }
+    @PatchMapping("locations/{id}")
+    public Location changeLocation(@PathVariable int id) {
+         return locationService.changeLoginStatus(id);
+    }
 }
