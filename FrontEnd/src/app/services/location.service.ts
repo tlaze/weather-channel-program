@@ -21,6 +21,13 @@ export class LocationService {
     header.append("Access-Control-Allow-Origin", "*");
     return this.http.get<Location[]>(`http://127.0.0.1:9000/locations/${id}/favorites`, {headers:header});
   }
+  toggleFavorite(id:number) : Observable<Location> {
+    let header : HttpHeaders = new HttpHeaders();
+    header.append("accept", "text/json");
+    header.append("Access-Control-Allow-Origin", "*");
+    return this.http.patch<Location>(`http://127.0.0.1:9000/locations/${id}`, {headers:header});
+
+  }
 
   addLocation(location: Location): void {
     console.log("addlocation is called")
@@ -31,9 +38,5 @@ export class LocationService {
     this.http.post<Location[]>('http://127.0.0.1:9000/location', location, {headers: header}).subscribe(response => {
         console.log("addlocation is finished")
       });
-  }
-
-
-
-  
+  }  
 }

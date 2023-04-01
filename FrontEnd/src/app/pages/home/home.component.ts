@@ -29,13 +29,7 @@ export class HomeComponent implements OnInit{
   loginCheck() : Boolean {
     return this.authService.isLoggedIn
   }
-  ngOnInit(): void {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {        
-        this.lat = position.coords.latitude
-        this.lon =  position.coords.longitude
-      })
-    }
+  ngOnInit(): void {   
 
   }
 
