@@ -7,5 +7,7 @@ export interface Location {
     state_id?:String,
     state_name?:String,
     account_id?:number,
+    locationid?:number,
+    favorites?:boolean,
     
 }

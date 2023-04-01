@@ -2,7 +2,7 @@
     <h1>{{locationType}}</h1>
     <div class="locationBox">
         <div *ngFor="let val of userLocations">
-            <button  mat-raised-button class="locationButton" color="primary" (click)="onSubmit(val.lat, val.lng)">{{val.city}}</button>
+            <button  mat-raised-button class="locationButton" color="primary" (click)="onSubmit(val.lat, val.lng, val.locationid, val.favorites)">{{val.city}}</button>
         </div>
     </div>
 </div>

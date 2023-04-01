@@ -16,14 +16,19 @@ export class LocationsComponent {
   convert(value: number|undefined) : number {
     return value as number;
   }
+  convertBool(value: boolean|undefined) :boolean {
+    return value as boolean;
+  }
   constructor(private router:Router){}
   
-  onSubmit(lat:number|undefined, lon:number|undefined) {
+  onSubmit(lat:number|undefined, lon:number|undefined, location:number|undefined, favorites:boolean|undefined) {
     console.log(lat);
     console.log(lon);
     this.router.navigate(['/weather'], {queryParams: {
       lat: this.convert(lat),
-      lon: this.convert(lon)
+      lon: this.convert(lon),
+      locationID: this.convert(location),
+      favorite:this.convertBool(favorites)
     }});
 
   }
