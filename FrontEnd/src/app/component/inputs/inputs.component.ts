@@ -30,6 +30,15 @@ export class InputsComponent {
     if (this.zip !== "") {
       this.weatherService.getLocationZip(this.zip).subscribe(data=> {
         let a :Location = data;
+
+        const id = localStorage.getItem('id');
+        console.log("current Id:" + id)
+        a.city = a.name;
+        a.accountid = Number(id);
+        console.log(a)
+        console.log("test")
+        this.locationService.addLocation(a);
+
         this.router.navigate(['/weather'], {queryParams: {
           lat: this.convert(a.lat),
           lon: this.convert(a.lon)
@@ -48,6 +57,7 @@ export class InputsComponent {
 
         const id = localStorage.getItem('id');
         console.log("current Id:" + id)
+        a[0].city = a[0].name;
         a[0].accountid = Number(id);
         console.log(a)
         console.log("test")

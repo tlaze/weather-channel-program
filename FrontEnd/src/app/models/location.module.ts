@@ -3,6 +3,7 @@ export interface Location {
     lat?:number,
     lon?:number,
     city?:String,
+    name?:String,
     state_id?:String,
     state_name?:String,
     account_id?:number,

@@ -12,7 +12,7 @@ import lombok.*;
 @Table
 public class Location {
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int locationid;
     @Column
     private long zip;
