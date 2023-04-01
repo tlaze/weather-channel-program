@@ -12,14 +12,14 @@ import lombok.*;
 @Table
 public class Location {
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int locationid;
     @Column
     private long zip;
     @Column
     private String lat;
     @Column
-    private String lng;
+    private String lon;
     @Column
     private String city;
     @Column

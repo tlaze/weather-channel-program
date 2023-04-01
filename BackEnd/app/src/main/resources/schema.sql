@@ -6,10 +6,10 @@ CREATE TABLE Account (
   logged_in BOOLEAN
 );
 CREATE TABLE Location (
-  locationid INT PRIMARY KEY AUTO_INCREMENT,
+  locationid int PRIMARY KEY AUTO_INCREMENT ,
   zip int,
   lat VARCHAR(255),
-  lng VARCHAR(255),
+  lon VARCHAR(255),
   city VARCHAR(255),
   state_id VARCHAR(255),
   state_name VARCHAR(255),

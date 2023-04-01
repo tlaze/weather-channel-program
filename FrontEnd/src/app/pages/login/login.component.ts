@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           console.log("account exists");
           console.log(data[i].id);
           localStorage.setItem("login", this.idAsNumber(data[i].id) as unknown as string)
+          localStorage.setItem("id", this.idAsNumber(data[i].id).toString());
           this.authService.isLoggedIn = true;
           this.authService.loginID = this.idAsNumber(data[i].id);
           this.authService.loginUser(this.idAsNumber(data[i].id)).subscribe( json => {
