@@ -19,7 +19,7 @@ public class Location {
     @Column
     private String lat;
     @Column
-    private String lng;
+    private String lon;
     @Column
     private String city;
     @Column
