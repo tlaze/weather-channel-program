@@ -15,8 +15,6 @@
 
   * [Contributors](#contributors)
 
-  * [Tests](#tests)
-
   * [Links](#links)
 
   * [Questions](#questions)
@@ -45,13 +43,6 @@
 
   Maria Eltgroth, Michael McCartney, Sadrach Martinez, Thomas Lazore
   
-  ## Tests
-  
-  n/a
-
-  ## ScreenShot
-
-  ![Screenshot]()
 
   ## Links
 
