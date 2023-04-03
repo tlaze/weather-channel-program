@@ -17,8 +17,6 @@
 
   * [Tests](#tests)
 
-  * [ScreenShots](#screenshots)
-
   * [Links](#links)
 
   * [Questions](#questions)
