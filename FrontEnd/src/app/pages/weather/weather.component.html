@@ -1,6 +1,11 @@
-<app-today [weather]="weather"></app-today>
+<div class="heart" (click)="toggleFavorite()" *ngIf="favorite=='true'">
+    <i class="fa-solid fa-heart" style="color: #ff0000;font-size: 2rem;"></i>
+</div>
+<div class="heart" (click)="toggleFavorite()" *ngIf="favorite=='false'">
+    <i class="fa-regular fa-heart" style="color: #ff0000;font-size: 2rem;"></i></div>
+<app-today [weather]="weather" ></app-today>
 <app-hourly [weather]="hourlyWeather"></app-hourly>
 
-<app-weekly [weather]="weeklyWeather"></app-weekly>
+<app-weekly [weather]="weeklyWeather" ></app-weekly>
 
 

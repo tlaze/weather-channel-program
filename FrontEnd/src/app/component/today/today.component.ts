@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TodayComponent {
   @Input() weather:any;
+  @Input() locationID:number|undefined
   consol() {
     console.log(this.weather);
   }
