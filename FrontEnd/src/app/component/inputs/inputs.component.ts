@@ -6,7 +6,7 @@ import { LocationService } from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-inputs',
-  templateUrl: './inputs.component.html', 
+  templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.css'],
 })
 export class InputsComponent {
@@ -17,7 +17,7 @@ export class InputsComponent {
   timeFrame:string = "hourly";
   constructor(private weatherService : WeatherService,
               private router: Router, private locationService :LocationService){}
-  
+
   convert(value: number|undefined) : number {
     return value as number;
   }
@@ -30,7 +30,6 @@ export class InputsComponent {
     if (this.zip !== "") {
       this.weatherService.getLocationZip(this.zip).subscribe(data=> {
         let a :Location = data;
-
         const id = localStorage.getItem('id');
         console.log("current Id:" + id)
         a.city = a.name;
@@ -46,14 +45,14 @@ export class InputsComponent {
           }});
 
         });
-        
+
         // this.weatherService.getWeather(this.convert(a.lat), this.convert(a.lon)).subscribe(temp => {
         //   console.log(temp)
         // })
       })
-   
+
     }
-    
+
     else if (this.city !== "" && this.state !== "") {
       this.weatherService.getLocationCityState(this.city, this.state).subscribe(data => {
         let a : Location[] = data;
