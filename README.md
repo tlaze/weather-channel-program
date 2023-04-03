@@ -66,7 +66,7 @@
 
   If you have any questions, comments, or issues feel free to contact me directly through
   
-  our [GitHub](https://github.com/mdiazelt), [GitHub](https://github.com/mmccartneycs), [GitHub](https://github.com/sadrachm), [GitHub](https://github.com/tlaze)
+  our Githubs: [Maria](https://github.com/mdiazelt), [Michael](https://github.com/mmccartneycs), [Sadrach](https://github.com/sadrachm), [Tom](https://github.com/tlaze)
   
   
   
