@@ -57,7 +57,6 @@
 
   ## Links
 
-  [Live Application]()
 
   [Project Repository](https://github.com/tlaze/weather-channel-program)
   
