@@ -7,7 +7,7 @@
 
   * [Description](#description)
   
-  * [Screenshot](#screenshot)
+  * [Images](#Images)
 
   * [Installation](#installation)
 
@@ -25,9 +25,10 @@
 
   This application utilizes OpenWeather API to retrieve weather data such as daily, hourly, or weekly forcasts. Users can create an account to have the ability to view search history and track favorite locations.
   
-  ## Screenshot
+  ## Images
   
   ![image](https://user-images.githubusercontent.com/47471193/230452801-186217ea-fa53-4015-81f7-7359a1f20193.png)
+  ![image](https://user-images.githubusercontent.com/47471193/230453507-d355f8e0-c6b6-4f4c-a91b-b61f47f04557.png)
   
   ## Installation
 
