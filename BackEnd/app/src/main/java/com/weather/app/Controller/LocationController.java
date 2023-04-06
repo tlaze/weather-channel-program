@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins={"http://localhost:4200", "http://localhost:9000"}, allowCredentials = "true")
+@CrossOrigin("*")
 @RestController
 public class LocationController {
     LocationService locationService;
