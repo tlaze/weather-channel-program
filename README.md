@@ -49,6 +49,8 @@
 
   [Project Repository](https://github.com/tlaze/weather-channel-program)
   
+  [Deployed Application] (http://ec2-18-217-181-159.us-east-2.compute.amazonaws.com:4200)
+  
   
   ## Questions
 
