@@ -9,17 +9,12 @@
   
   * [Images](#Images)
 
-  * [Installation](#installation)
-
   * [Usage](#usage)
 
   * [License](#license)
 
-  * [Contributors](#contributors)
-
   * [Links](#links)
 
-  * [Questions](#questions)
 
   ## Description
 
