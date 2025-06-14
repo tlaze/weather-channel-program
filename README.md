@@ -1,68 +1,57 @@
-  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
-  
-  # Weather Channel Project
-  
+![badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
-  ## Table Of Contents
+# 🌦️ Weather Channel Project
 
-  * [Description](#description)
-  
-  * [Images](#Images)
+A full-stack weather tracking application that allows users to view real-time weather data and forecasts using the OpenWeather API. Features include account creation, search history, and favorite location tracking.
 
-  * [Installation](#installation)
+---
 
-  * [Usage](#usage)
+## 📚 Table of Contents
 
-  * [License](#license)
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Images](#images)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributors](#contributors)
+- [Links](#links)
+- [Questions](#questions)
 
-  * [Contributors](#contributors)
+---
 
-  * [Links](#links)
+## 📖 Description
 
-  * [Questions](#questions)
+This application retrieves current, hourly, and weekly weather forecasts from the OpenWeather API. Users can register and log in to save favorite locations and track their search history. Designed with a responsive UI and dynamic data rendering.
 
-  ## Description
+---
 
-  This application utilizes OpenWeather API to retrieve weather data such as daily, hourly, or weekly forcasts. Users can create an account to have the ability to view search history and track favorite locations.
-  
-  ## Images
-  
-  ![image](https://user-images.githubusercontent.com/47471193/230452801-186217ea-fa53-4015-81f7-7359a1f20193.png)
-  ![image](https://user-images.githubusercontent.com/47471193/230453507-d355f8e0-c6b6-4f4c-a91b-b61f47f04557.png)
-  
-  ## Installation
+## ✨ Features
 
-  To run this application properly, you need to install:
-  
-  node.js
-  
+- Real-time weather updates using OpenWeather API
+- Search by city name
+- View current, hourly, and weekly forecasts
+- User authentication and account creation
+- Favorite location tracking and search history
+- Responsive, modern UI built for web
 
-  ## Usage
-  
-  Run the file AppApplication, enter file path of front-end, npm install, ng serve
-  
-  
-  ## License
-  
-  This Project is licensed by [MIT](https://choosealicense.com/licenses/mit/).
-  
-  ## Contributors
+---
 
-  Maria Eltgroth, Michael McCartney, Sadrach Martinez, Thomas Lazore
-  
+## 🛠 Technologies Used
 
-  ## Links
+- **Frontend**: Angular, HTML, CSS, TypeScript
+- **Backend**: Node.js, Express.js
+- **Authentication**: JWT (JSON Web Token)
+- **Database**: MongoDB
+- **API**: OpenWeather API
+- **Hosting**: AWS EC2
+- **Version Control**: Git & GitHub
 
+---
 
-  [Project Repository](https://github.com/tlaze/weather-channel-program)
-  
-  [Deployed Application](http://ec2-18-217-181-159.us-east-2.compute.amazonaws.com:4200)
-  
-  
-  ## Questions
+## 🖼️ Images
 
-  If you have any questions, comments, or issues feel free to contact me directly through
-  
-  our Githubs: [Maria](https://github.com/mdiazelt), [Michael](https://github.com/mmccartneycs), [Sadrach](https://github.com/sadrachm), [Tom](https://github.com/tlaze)
-  
+![image1](https://user-images.githubusercontent.com/47471193/230452801-186217ea-fa53-4015-81f7-7359a1f20193.png)
+![image2](https://user-images.githubusercontent.com/47471193/230453507-d355f8e0-c6b6-4f4c-a91b-b61f47f04557.png)
 
