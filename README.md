@@ -35,6 +35,44 @@
   To run this application properly, you need to install:
   
   node.js
+
+  cd to front-end
+
+  npm install
+
+  ng serve
+
+  ## 🛠 Backend Setup Instructions (Spring Boot)
+
+### ☕ 1. Install Java JDK 8
+
+Ensure Java 8 is installed before running the backend. Here's how:
+
+#### ✅ Windows
+
+1. Download JDK 8 from Oracle or AdoptOpenJDK:
+   - [Oracle JDK 8 Downloads](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+   - [AdoptOpenJDK](https://adoptopenjdk.net/?variant=openjdk8)
+
+2. Install it using the installer.
+
+3. Set `JAVA_HOME` environment variable:
+   - Open System Properties > Environment Variables.
+   - Under "System Variables", click **New**:
+     - Name: `JAVA_HOME`
+     - Value: path to the JDK install folder (e.g., `C:\Program Files\Java\jdk1.8.0_202`)
+   - Add `%JAVA_HOME%\bin` to the `Path` variable.
+
+4. Verify it:
+   ```bash
+   java -version
+
+
+5.   cd BackEnd/app
+  ```
+./mvnw spring-boot:run     # Mac/Linux
+mvnw spring-boot:run       # Windows
+```
   
 
   ## Usage
