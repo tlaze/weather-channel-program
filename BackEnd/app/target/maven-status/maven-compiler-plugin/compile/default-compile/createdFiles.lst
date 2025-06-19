@@ -1,0 +1,9 @@
+com\weather\app\Model\Location.class
+com\weather\app\Service\AccountService.class
+com\weather\app\Repository\LocationRepository.class
+com\weather\app\Controller\LocationController.class
+com\weather\app\Model\Account.class
+com\weather\app\Service\LocationService.class
+com\weather\app\Controller\AccountController.class
+com\weather\app\Repository\AccountRepository.class
+com\weather\app\AppApplication.class

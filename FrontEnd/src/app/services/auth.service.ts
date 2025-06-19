@@ -21,25 +21,25 @@ export class AuthService {
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.post<Account>("http://3.101.34.132:9000/account", account, {headers:header});
+    return this.http.post<Account>("http://localhost:8080/account", account, {headers:header});
   }
   getRegisteredUsers(): Observable<Account[]>{
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.get<Account[]>("http://3.101.34.132:9000/account", {headers:header});
+    return this.http.get<Account[]>("http://localhost:8080/account", {headers:header});
   }
   loginUser(id : number): Observable<Account>{
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.patch<Account>(`http://3.101.34.132:9000/account/${id}`, {loggedIn: true}, {headers:header});
+    return this.http.patch<Account>(`http://localhost:8080/account/${id}`, {loggedIn: true}, {headers:header});
   }
   logoutUser(id : number): Observable<Account>{
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.patch<Account>(`http://3.101.34.132:9000/account/${id}`, {loggedIn: false}, {headers:header});
+    return this.http.patch<Account>(`http://localhost:8080/account/${id}`, {loggedIn: false}, {headers:header});
   }
 
 }

@@ -1,6 +1,6 @@
 package com.weather.app.Model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Entity
@@ -13,7 +13,7 @@ import lombok.*;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int locationid;
+    private long locationid;
     @Column
     private long zip;
     @Column

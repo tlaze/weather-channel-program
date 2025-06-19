@@ -1,8 +1,8 @@
 <mat-card class="my-weatherToday">
-    <div class="weatherWidgetRow" *ngIf="weather.isDay">
+    <div class="weatherWidgetRow" *ngIf="weather?.isDay">
       <i class="fas fa-3x fa-sun sun"></i>
     </div>
-    <div class="weatherWidgetRow" *ngIf="!weather.isDay">
+    <div class="weatherWidgetRow" *ngIf="!weather?.isDay">
       <i class="fas fa-3x fa-moon moon"></i>
     </div>
   <div class="weatherWidgetRow cloudDiv">

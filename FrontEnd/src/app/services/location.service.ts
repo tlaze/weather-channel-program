@@ -13,19 +13,19 @@ export class LocationService {
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.get<Location[]>(`http://3.101.34.132:9000/locations/${id}`, {headers:header});
+    return this.http.get<Location[]>(`http://localhost:8080/locations/${id}`, {headers:header});
   }
   getFavoritesByID(id:number ) : Observable<Location[]> {
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.get<Location[]>(`http://3.101.34.132:9000/locations/${id}/favorites`, {headers:header});
+    return this.http.get<Location[]>(`http://localhost:8080/locations/${id}/favorites`, {headers:header});
   }
   toggleFavorite(id:number) : Observable<Location> {
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
-    return this.http.patch<Location>(`http://3.101.34.132:9000/locations/${id}`, {headers:header});
+    return this.http.patch<Location>(`http://localhost:8080/locations/${id}`, {headers:header});
 
   }
 
@@ -35,6 +35,6 @@ export class LocationService {
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
     console.log(location)
-    return this.http.post<Location>('http://3.101.34.132:9000/location', location, {headers: header});
+    return this.http.post<Location>('http://localhost:8080/location', location, {headers: header});
   }  
 }
